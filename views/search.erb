@@ -1,0 +1,25 @@
+<h3>Search letscookfrench.com</h3>
+<%if params[:text] != "" && !params[:text].nil?%>
+  <h4>Showing results for: <%= params[:text] %></h4>
+  <ol>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= recipe.name %>
+      </li>
+    <% end %>
+  </ol>
+  <form action="/new" class="">
+    <div class="form-group">
+      <input class="form-control" type="text" name="text" placeholder="Type the number of the recipe you'd like to add..">
+      <input class="btn btn-primary" type="submit" value="Add">
+    </div>
+  </form>
+<% end %>
+
+<form action="/search" class="">
+  <div class="form-group">
+    <input class="form-control" type="text" name="text" placeholder="Type an ingredient here...">
+    <input class="btn btn-default" type="submit" value="Search">
+  </div>
+</form>
+

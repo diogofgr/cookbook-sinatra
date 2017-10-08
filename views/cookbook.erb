@@ -1,0 +1,14 @@
+<h3>My Saved Recipes</h3>
+<h5>Click a recipe to get more info</h5>
+<ol>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <% check_box = recipe.is_done? ? "[x]" : "[ ]" %>
+    <li>
+      <a href="/show/<%= index + 1 %>">
+        <%= check_box %> <%= recipe.name %> - <%= recipe.description %>
+      </a>
+    </li>
+  <% end %>
+</ol>
+
+<%= erb :_menu %>

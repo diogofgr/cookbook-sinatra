@@ -1,0 +1,12 @@
+<h3>Delete <%= @recipe.name%>?</h3>
+
+<% check_box = @recipe.is_done? ? "[x]" : "[ ]"%>
+
+<h5>Are you sure you want to delete this recipe?</h5>
+
+<p>
+  <a href="/delete/<%= @recipe_index%>">Yes</a>
+</p>
+<p>
+  <a href="/show/<%= @recipe_index %>">No</a>
+</p>
